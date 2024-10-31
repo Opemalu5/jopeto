@@ -1,63 +1,4 @@
-<?php
-session_start();
-include("connections.php");
-include("functions.php");
 
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    
-
-    if (!empty($username) && !empty($password) && !is_numeric($username)) {
-        
-
-        $query = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
-        $result = mysqli_query($con, $query);
-
-        if ($result) {
-            if ($result && mysqli_num_rows($result) > 0) {
-                $user_data = mysqli_fetch_assoc($result);
-
-                if ($user_data['password'] === $password) {
-                    $_SESSION['username'] = $user_data['username'];
-
-                    $login_date = date("Y-m-d");
-                    date_default_timezone_set('Asia/Manila');
-                    $login_time = date("h:i:s A");
-                    $userID = $user_data['id'];
-                    $username = $user_data['username'];
-                    $_SESSION['log']=1;
-                    $qry = "INSERT INTO userlogs (username, userID, loginDate, loginTime, logoutDate, logoutTime, lastEditedOn)
-                            VALUES (
-                                '$username',
-                                '$userID',
-                                '$login_date',
-                                '$login_time',
-                                NULL,
-                                NULL,
-                            
-                                ''
-                            )";
-                    mysqli_query($con, $qry) or die("Can't execute query");
-
-                    header("Location: home.php");
-
-                    die;
-                }
-                
-            }
-
-        }
-
-        echo '<script>alert("Wrong Username or Password")</script>';
-        
-    } else {
-        echo '<script>alert("Missing Fields")</script>';
-    }
-}
-?>
 <!DOCTYPE html>
 <html>
 <title>Pastry shop</title>
@@ -209,5 +150,67 @@ window.addEventListener('load', function() {
 });
 
     </script>
+
+<?php
+session_start();
+include("connections.php");
+include("functions.php");
+
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    
+
+    if (!empty($username) && !empty($password) && !is_numeric($username)) {
+        
+
+        $query = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+        $result = mysqli_query($con, $query);
+
+        if ($result) {
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+
+                if ($user_data['password'] === $password) {
+                    $_SESSION['username'] = $user_data['username'];
+
+                    $login_date = date("Y-m-d");
+                    date_default_timezone_set('Asia/Manila');
+                    $login_time = date("h:i:s A");
+                    $userID = $user_data['id'];
+                    $username = $user_data['username'];
+                    $_SESSION['log']=1;
+                    $qry = "INSERT INTO userlogs (username, userID, loginDate, loginTime, logoutDate, logoutTime, lastEditedOn)
+                            VALUES (
+                                '$username',
+                                '$userID',
+                                '$login_date',
+                                '$login_time',
+                                NULL,
+                                NULL,
+                            
+                                ''
+                            )";
+                    mysqli_query($con, $qry) or die("Can't execute query");
+
+                    header("Location: home.php");
+
+                    die;
+                }
+                
+            }
+
+        }
+
+        echo '<script>alert("Wrong Username or Password")</script>';
+        
+    } else {
+        echo '<script>alert("Missing Fields")</script>';
+    }
+}
+?>
+	
 </body>
 </html>
