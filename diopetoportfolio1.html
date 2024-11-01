@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diopet Mascariña's Resume Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <style>
+        /* Importing font */
+        @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Diphylleia', sans-serif;
+            color: #333;
+            background-color: #F9D9AA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        /* Container for all sections */
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cd7d56;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #f0fafa;
+        }
+
+        /* Profile picture styling */
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        /* Styling for each section */
+        .section {
+            margin-top: 20px;
+            padding: 20px;
+            color: #904747;
+            border-bottom: 1px solid #cd7d56;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #cd7d56;
+        }
+
+        /* List styling */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Contact info and other lists styling */
+        .contact-info p, .reference p {
+            margin: 5px 0;
+            color: #904747;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #cd7d56;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Button styling */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #904747;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #e04c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="opet2.jpg" alt="Profile Picture of Diopet Mascariña" class="profile-picture">
+            <h1>Diopet C. Mascariña</h1>
+            <p>Motivated IT student with a passion for technology, proficient in Java and Python, experienced in web development with HTML, CSS, and JavaScript.</p>
+        </header>
+
+        <section class="contact-info section">
+            <h2>Contact Information</h2>
+            <p>Phone: 09976151373</p>
+            <p>Email: ptc.diopetmascarina@gmail.com</p>
+            <p>Address: Road 10, Lot 23 Mahusay Street, Barangay Sta Ana, Taytay, Rizal</p>
+        </section>
+
+        <section class="skills section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Web designing</li>
+                <li>Computer hardware knowledge</li>
+                <li>Web and app development</li>
+                <li>Software installation and configuration</li>
+                <li>Troubleshooting</li>
+                <li>Programming languages: Java, JavaScript, PHP</li>
+                <li>Frontend: HTML, CSS</li>
+                <li>Database: SQL, Firebase</li>
+            </ul>
+        </section>
+
+        <section class="work-experience section">
+            <h2>Work Experience</h2>
+            <h3>Concentrix - IT Technical Support Representative Intern</h3>
+            <p>Assisted with software issues, including OS installations, system migration, and PC hardware troubleshooting.</p>
+
+            <h3>Alorica - Customer Service Representative</h3>
+            <p>Provided customer support to resolve account issues and enhance user satisfaction.</p>
+        </section>
+
+        <section class="education section">
+            <h2>Education</h2>
+            <p><strong>Pateros Technological College</strong> - BS in Information Technology (2020 - 2024)</p>
+            <p><strong>Access Computer College</strong> - Information Communication Technology (2018 - 2020)</p>
+        </section>
+
+        <section class="projects section">
+            <h2>Projects</h2>
+            <h3>Job Search Application</h3>
+            <p>Developed a user-friendly application with seamless frontend and backend integration.</p>
+
+            <h3>E-commerce Website for Pastry Shop</h3>
+            <p>Created a visually appealing website to enhance sales with a user-friendly interface.</p>
+
+            <h3>Tree Fall Monitoring System (Capstone)</h3>
+            <p>Developed an application focused on monitoring fallen trees and forest fires with user-friendly navigation.</p>
+        </section>
+
+        <section class="certificates section">
+            <h2>Certificates</h2>
+            <ul>
+                <li>Amazon Redshift Overview and Value Proposition (2023)</li>
+                <li>Amazon QuickSight and Generative BI Features (2023)</li>
+                <li>Introduction to Artificial Intelligence (2023)</li>
+                <li>Data Lakes versus Data Warehouses (2023)</li>
+                <!-- Add more certificates as needed -->
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Diopet C. Mascariña. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for SweetAlert Welcome Popup -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in effect
+            document.body.style.opacity = '1';
+
+            // Welcome popup using SweetAlert
+            Swal.fire({
+                title: 'Welcome!',
+                text: 'Explore Diopet C. Mascariña\'s Resume.',
+                icon: 'info',
+                confirmButtonText: 'Close'
+            });
+        });
+    </script>
+</body>
+</html>
