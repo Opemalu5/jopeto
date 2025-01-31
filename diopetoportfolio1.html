@@ -22,53 +22,57 @@
             background-color: #F9D9AA;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            min-height: 100vh; /* Ensure the page fills the screen */
             transition: opacity 0.5s ease-in-out;
             opacity: 0;
         }
 
-        /* Container for all sections */
-        .container {
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Header styling */
+        /* Header section styling */
         header {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: #cd7d56;
             color: #fff;
-            padding: 20px;
+            width: 100%;
             text-align: center;
+            padding: 20px;
             border-radius: 8px 8px 0 0;
-            flex-direction: column;
+            position: relative;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin: 10px 0;
-        }
-
-        header p {
-            font-size: 18px;
-            font-weight: 400;
-            color: #f0fafa;
-        }
-
-        /* Profile picture styling */
+        /* Profile Picture */
         .profile-picture {
-            width: 150px;
-            height: 150px;
+            width: 25vw;
+            height: 25vw;
+            max-width: 150px;
+            max-height: 150px;
             border-radius: 50%;
             border: 3px solid #fff;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 15px;
+        }
+
+        /* Header Title */
+        header h1 {
+            font-size: 6vw; /* Adjust font size relative to screen width */
+            margin: 10px 0;
+        }
+
+        /* Header Description */
+        header p {
+            font-size: 2vw; /* Adjust paragraph font size */
+            font-weight: 400;
+            color: #dac3a0;
+            line-height: 1.5;
+        }
+
+        /* Container to hold the content sections */
+        .container {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
         }
 
         /* Styling for each section */
@@ -85,53 +89,65 @@
             color: #cd7d56;
         }
 
-        /* List styling */
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        /* Contact info and other lists styling */
-        .contact-info p, .reference p {
-            margin: 5px 0;
-            color: #904747;
-        }
-
-        /* Footer styling */
+        /* Footer Styling */
         footer {
             background-color: #cd7d56;
             color: #fff;
             text-align: center;
             padding: 10px;
             font-size: 14px;
+            width: 100%;
             border-radius: 0 0 8px 8px;
+            margin-top: auto; /* Pushes footer to the bottom */
         }
 
-        /* Button styling */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #904747;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 8vw; /* Smaller header size for mobile devices */
+            }
+
+            header p {
+                font-size: 4vw; /* Adjust paragraph size for mobile */
+            }
+
+            .profile-picture {
+                width: 35vw;
+                height: 35vw;
+                max-width: 120px; /* Max size to avoid overflowing */
+                max-height: 120px;
+            }
         }
 
-        .button:hover {
-            background-color: #e04c00;
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 10vw; /* Even smaller for very small screens */
+            }
+
+            header p {
+                font-size: 5vw; /* Adjust paragraph size for very small screens */
+            }
+
+            .profile-picture {
+                width: 45vw;
+                height: 45vw;
+                max-width: 100px; /* Max size to avoid overflowing */
+                max-height: 100px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="opet2.jpg" alt="Profile Picture of Diopet Mascariña" class="profile-picture">
-            <h1>Diopet C. Mascariña</h1>
-            <p>Motivated IT student with a passion for technology, proficient in Java and Python, experienced in web development with HTML, CSS, and JavaScript.</p>
-        </header>
+    <header>
+        <img src="opet2.jpg" alt="Profile Picture of Diopet Mascariña" class="profile-picture">
+        <h1>Diopet C. Mascariña</h1>
+        <p>IT graduate with a strong interest in programming and software development. Knowledgeable
+            in Java and PHP with experience in web development using HTML, CSS, and JavaScript. Eager
+            to learn new technologies, improve coding skills, and contribute to real-world projects. Strong
+            problem-solving mindset and a passion for building simple, efficient applications.</p>
+    </header>
 
+    <div class="container">
         <section class="contact-info section">
             <h2>Contact Information</h2>
             <p>Phone: 09976151373</p>
@@ -187,7 +203,6 @@
                 <li>Amazon QuickSight and Generative BI Features (2023)</li>
                 <li>Introduction to Artificial Intelligence (2023)</li>
                 <li>Data Lakes versus Data Warehouses (2023)</li>
-                <!-- Add more certificates as needed -->
             </ul>
         </section>
     </div>
